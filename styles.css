@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('weather-bg.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transform: translateY(-20px);
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Side Menu */
+.side-menu {
+    width: 250px;
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.side-menu .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.side-menu nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+.side-menu nav ul li {
+    margin: 15px 0;
+    animation: fadeInUp 0.6s ease both;
+}
+
+.side-menu nav ul li:nth-child(1) { animation-delay: 0.2s; }
+.side-menu nav ul li:nth-child(2) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.side-menu nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.side-menu nav ul li a:hover {
+    background: #34495e;
+    transform: scale(1.05);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 30px;
+    background: #f4f6f8;
+    opacity: 0;
+    animation: fadeInContent 1s ease forwards 0.3s;
+}
+
+@keyframes fadeInContent {
+    to { opacity: 1; }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    animation: dropIn 0.7s ease forwards;
+}
+
+@keyframes dropIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.search-bar .search-input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    width: 250px;
+    transition: border 0.3s;
+}
+
+.search-bar .search-input:focus {
+    border-color: #3a7bd5;
+    outline: none;
+}
+
+.search-bar .search-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    background: #3498db;
+    color: #fff;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.search-bar .search-button:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+}
+
+.user-profile {
+    font-size: 16px;
+    color: #3498db;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.user-profile:hover {
+    color: #2980b9;
+}
+
+/* Weather Widgets */
+
+.current-weather-section, .forecast-section, .chatbot-section {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transform: scale(0.9);
+    animation: popUp 0.8s ease forwards;
+}
+
+@keyframes popUp {
+    to { transform: scale(1); opacity: 1; }
+}
+
+.current-weather-section h2, .forecast-section h2, .chatbot-section h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.weather-details div {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.forecast-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.forecast-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.forecast-item:hover {
+    transform: scale(1.05);
+}
+
+.forecast-item img {
+    margin-top: 8px;
+}
+
+/* Charts Section */
+
+.charts-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transform: translateY(20px);
+    animation: bounceIn 0.9s ease forwards;
+}
+
+.chart-container h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+@keyframes bounceIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Chatbot */
+
+.chatbot-section {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#chatbot-messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fafafa;
+    margin-bottom: 10px;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #d1e7fd;
+    align-self: flex-end;
+}
+
+.user-message {
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    align-self: flex-start;
+}
+
+/* Style for the chatbot input box */
+
+#chatbot-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+#chatbot-input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .side-menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .charts-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

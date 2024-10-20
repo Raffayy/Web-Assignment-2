@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Table</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Side Menu -->
+        <aside class="side-menu">
+            <div class="logo">Weather App</div>
+            <nav>
+                <ul>
+                    <li><a href="Dashboard.html">Dashboard</a></li>
+                    <li><a href="Table.html" class="active">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Header: Search Bar and User Profile -->
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" id="city-input" placeholder="Enter city name" class="search-input">
+                    <button id="get-weather" class="search-button">Get Weather</button>
+                </div>
+                <div class="user-profile">User Profile</div>
+            </header>
+
+            <!-- Table Section -->
+            <section class="table-section">
+                <h2>5-Day Weather Forecast (Table)</h2>
+                <table class="weather-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Temperature (°C)</th>
+                            <th>Weather</th>
+                            <th>Humidity (%)</th>
+                            <th>Wind Speed (m/s)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Pagination Section -->
+            <section class="pagination-section">
+                <button id="prev-page" class="pagination-btn">Previous</button>
+                <button id="next-page" class="pagination-btn">Next</button>
+            </section>
+        </main>
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>

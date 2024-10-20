@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+    <script src="chatbot.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Side Menu -->
+        <aside class="side-menu">
+            <div class="logo">Weather App</div>
+            <nav>
+                <ul>
+                    <li><a href="Dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="Table.html" >Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Header: Search Bar and User Profile -->
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" id="city-input" placeholder="Enter city name" class="search-input">
+                    <button id="get-weather" class="search-button">Get Weather</button>
+                </div>
+                <div class="user-profile">User Profile</div>
+            </header>
+
+            <!-- Current Weather Section -->
+            <section class="current-weather-section">
+                <h2>Current Weather</h2>
+                <div id="current-weather-details" class="weather-details">
+                   
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast Section -->
+            <section class="forecast-section">
+                <h2>5-Day Weather Forecast</h2>
+                <div id="forecast-details" class="forecast-grid">
+                 
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-container">
+                    <h3>Vertical Bar Chart (Temperature)</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Doughnut Chart (Weather Conditions)</h3>
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Line Chart (Temperature Trend)</h3>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Chatbot Section -->
+            <section class="chatbot-section">
+                <h2>Chatbot</h2>
+                <div id="chatbot-messages" class="chatbot-messages"></div>
+                <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Ask a question">
+            </section>
+        </main>
+    </div>
+</body>
+</html>
